@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+        <script src="/front-end/my_playlist/my_playlist.js"></script>
+        <script src="/front-end/my_playlist/add_playlist.js"></script>
+        <title>Crea playlist</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+                <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div class=" g-5 row justify-content-center" style="margin-top: 50px;">
+                            <div class="col-md-8 register">
+                                <div class='error'></div>
+                                <h1 class="text-center">Playlist</h1>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label"><i class="bi bi-list-ul"></i> Nome
+                                        playlist</label>
+                                    <input type="text" class="form-control" id="playlist_name" name="playlist_name"
+                                        placeholder='Nome playlist'>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputPassword5" class="form-label"><i class="bi bi-card-text"></i></i>
+                                        Descrizione</label>
+                                    <textarea id="descrizione" class="form-control" name="descrizione"
+                                        aria-describedby="passwordHelpBlock" placeholder="Descrizione"></textarea>
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="exampleInputEmail1" class="form-label"><i class="bi bi-hash"></i>
+                                        Tag</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-hash"></i></span>
+                                        <input type="text" class="form-control" placeholder="Tag" name="tag" id="tag"
+                                            aria-label="tag" aria-describedby="basic-addon1">
+                                            <button onclick="aggiungi_tag_temp()" class="btn btn-dark">Aggiungi
+                                                tag</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <button onclick="create_my_playlist()" id="submit_login"
+                                    class="position-relative top-0 start-50 translate-middle btn btn-success">Crea</button>
+                            </div>
+                            <div id="tag_lis"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+            <script>check_login()</script>
+    </div>
+</body>
+
+</html>

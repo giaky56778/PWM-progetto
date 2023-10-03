@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <% if(option== 0) {%>
+        <title>Playlist</title>
+        <script src="/front-end/html_page/playlist.js"></script>
+        <script src="/front-end/html_page/album.js"></script>
+    <% } else { %>
+        <title>Playlist interna</title>
+        <script src="/front-end/my_playlist/modifica_playlist.js"></script>
+        <script src="/front-end/my_playlist/my_playlist.js"></script>
+        <script src="/front-end/html_page/playlist.js"></script>
+        <script src="/front-end/html_page/album.js"></script>
+    <% }%>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+                <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div class='row info-album' id="info-album">
+                            <img class='col-md-3' crossorigin="anonymous" id="imgAlbum" draggable='false' height="auto" />
+                            <div class='col-md-7 p-3 mb-2'>
+                                <div id="album_info">
+                                </div>
+                                <a draggable="false" href="#" id="ascolta_spotify" class="btn btn-success col-md-4">Ascolta su <img draggable="false" src="/img/Spotify_Logo_RGB_White.png" height="22.5px"></a>
+                            </div>
+                        </div>
+                        <table class="mt-4 table table-borderless">
+                            <thead class="stick" id="tabella_head"></thead>
+                            <tbody class="table-hover" id="tabella_container"></tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+        <div class="footer row rounded-2"></div>
+    </div>
+    <%- script %>
+        <script>check_login()</script>
+        </div>
+</body>
+
+</html>

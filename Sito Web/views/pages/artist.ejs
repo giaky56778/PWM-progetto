@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/html_page/artist.js"></script>
+    <script src="/front-end/preferiti/artista_preferito.js"></script>
+    <title>Artista</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+            <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div class='row info-album' id="info-album">
+                            <img class='col-md-3' crossorigin="anonymous" id="imgAlbum" draggable='false' height="auto" />
+                    <div class='col-md-9 p-3 mb-2'>
+                        <div id="album_info">
+                        </div>
+                            <a draggable="false" href="#" id="ascolta_spotify" class="btn btn-success col-md-4">Apri su <img draggable="false" src="/img/Spotify_Logo_RGB_White.png" height="22.5px"></a>
+                    </div>
+                </div>
+                    <div class="row" id="artist_album">
+                    </div>
+                </div>
+            </div>
+        <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+        <script>check_login()</script>
+    </div>
+</body>
+
+</html>

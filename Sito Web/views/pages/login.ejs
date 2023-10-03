@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/account/login.js" defer></script>
+    <title>Login</title>
+</head>
+
+<body class="login">
+    <div class="container-fluid mh-100 login position-absolute top-50 start-50 translate-middle ">   
+        <a href="/"><i class="bi bi-house"></i> Home</a>
+        <div class=" g-4 row justify-content-center">
+            <div class="col-md-8 g-3">
+                <div class='error'></div>
+                <h1 class="text-center">Login</h1>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"><i class="bi bi-people-fill"></i>Username o email</label>
+                    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Username o email" id="exampleInputEmail1" name="username" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword5" class="form-label">Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" name="password"
+                        aria-describedby="passwordHelpBlock" placeholder="Password">
+                </div>
+                <br>
+                <button onclick="login_db()" id="submit_login" class="position-relative top-0 start-50 translate-middle btn btn-success">Login</button>
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <span>Non hai un account? Registrati </span><a href="/register">qui</a>
+        </div>
+    </div>
+</body>

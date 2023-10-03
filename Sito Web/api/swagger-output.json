@@ -1,0 +1,1131 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3100",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/get_json": {
+      "post": {
+        "tags": [
+          "Principale"
+        ],
+        "summary": "Richieste a Spotify",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Principale"
+        ],
+        "summary": "Renderizza la home del sito web",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/playlist/{id}": {
+      "get": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Carica e renderizza la pagina della playlist di Spotify",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/my_playlist/{id}": {
+      "get": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Carica e renderizza la pagina della playlist interna di MongoDB",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/album/{id}": {
+      "get": {
+        "tags": [
+          "Album"
+        ],
+        "summary": "Carica e renderizza la pagina dell'albu di Spotify",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/artist/{id}": {
+      "get": {
+        "tags": [
+          "Artista"
+        ],
+        "summary": "Carica e renderizza la pagina dell'artista di Spotify",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/search": {
+      "get": {
+        "tags": [
+          "Cerca"
+        ],
+        "summary": "Carica e renderizza la pagina dell'artista di Spotify",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/change_profile": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Renderizza la pagina per la modifica delle preferenze dell'utente",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/change_data": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Renderizza la pagina per la modifica dei dati dell'utente",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/crea_playlist": {
+      "get": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Renderizza la pagina per la creazione di playlist interne",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/change_my_playlist/{id}": {
+      "get": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Renderizza la pagina per la modifica delle mie playlist interne",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/search-internal": {
+      "get": {
+        "tags": [
+          "Cerca"
+        ],
+        "summary": "Renderizza la pagina per la ricerce interna delle playlist",
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/api/register": {
+      "put": {
+        "tags": [
+          "Autentificazione"
+        ],
+        "summary": "Registra l'utente dentro",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Autentificazione"
+        ],
+        "summary": "Fase di controllo per il login",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/add_favorite_artist": {
+      "put": {
+        "tags": [
+          "Artista"
+        ],
+        "summary": "Aggiunge l'artista ai preferiti per quell'account [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "artist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/view_favorite_artist": {
+      "post": {
+        "tags": [
+          "Artista"
+        ],
+        "summary": "Guarda gli artisti preferiti per quell'account [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/delete_favorite_artist": {
+      "delete": {
+        "tags": [
+          "Artista"
+        ],
+        "summary": "Rimuove l'artista ai preferiti per quell'account [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "artist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/search_genre": {
+      "post": {
+        "tags": [
+          "Cerca"
+        ],
+        "summary": "Cerca in base ai generi di spotify con quello dato",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "genres": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/add_genre": {
+      "put": {
+        "tags": [
+          "Genere"
+        ],
+        "summary": "Aggiunge generi ai preferiti [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/view_favorite_genre": {
+      "post": {
+        "tags": [
+          "Genere"
+        ],
+        "summary": "Visualizza i genere preferiti [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/delete_favorite_genre": {
+      "delete": {
+        "tags": [
+          "Genere"
+        ],
+        "summary": "Cancella il genere preferito [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/account_info": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Restituisce le informazioni dell'account [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/remove_account": {
+      "delete": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Rimuove l'account [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/change_profilo": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Cambia i dati inerenti all'account [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                },
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/view_suggestion": {
+      "post": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Restituisce i brani correlati ai genere e artisti preferiti [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/api/create_my_playlist": {
+      "put": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Crea una nuova playlist [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/view_my_playlist": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Restituisce le informazioni delle playlist che segue / ha creato l'account [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "creator": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/delete_tag": {
+      "delete": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Rimuove i tag dalla playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "tag": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/add_tag": {
+      "put": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Aggiunge i tag alla playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "tag": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/modifica_playlist": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Modifico la playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "creator": {
+                  "example": "any"
+                },
+                "nome": {
+                  "example": "any"
+                },
+                "desc": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/delete_playlist": {
+      "delete": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Rimuovo la playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "creator": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/modifica_privato": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Modifico la playlist interna e la rendo o privata o pubblica [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "creator": {
+                  "example": "any"
+                },
+                "public": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/add_track": {
+      "put": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Aggiungo i brani alla playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "trackId": {
+                  "example": "any"
+                },
+                "trackName": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/remove_track": {
+      "delete": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Rimuove il brano dalla playlist interna [Autentificzione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                },
+                "id": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/cerca_interna": {
+      "post": {
+        "tags": [
+          "Cerca"
+        ],
+        "summary": "Effettua una ricerca attraverso: Tag, Nome playlist, Brani oppure su tutto sulle playlist interne",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "example": "any"
+                },
+                "creator": {
+                  "example": "any"
+                },
+                "cerca": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/visualizza_playlist_follow": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Visualizza le playlist che seguo",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "account": {
+                  "example": "any"
+                },
+                "playlist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/aggiungi_follow": {
+      "put": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Aggiungo un nuovo followers alla playlist interna [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "account": {
+                  "example": "any"
+                },
+                "playlist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/rimuovi_follow": {
+      "delete": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Rimuovo il follow dalla playlist interna [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "account": {
+                  "example": "any"
+                },
+                "playlist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/api/count_follower": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Visualizza il numero di followers di una playlist pubblica interna",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "playlist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/check_follow": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Visualizza il numero di playlist che seguo [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "example": "any"
+                },
+                "playlist": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/my_playlists": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Visualizza i dati delle playlist pubblica interna che seguo [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/my_playlists_add_track": {
+      "post": {
+        "tags": [
+          "Playlist"
+        ],
+        "summary": "Restituisce le playlist che ho creato [Autentificazione richiesta]",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

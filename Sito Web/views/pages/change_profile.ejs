@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/account/account.js"></script>
+    <script src="/front-end/preferiti/genere_preferito.js"></script>
+    <script src="/front-end/preferiti/artista_preferito.js"></script>
+    <script src="/front-end/checklogin.js" defer></script>
+    <title>Modifica del profilo</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+                <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div id="container-card" class='row'>
+                            <div class="artista">
+                                <div class="mb-3">
+                                    <h3 class="text-center">Artista preferito</h3>
+                                    <div id="artisti"></div>
+                                    <br>
+                                    <div class="input-group mb-3 artista_search_bar">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-person-fill"></i></span>
+                                        <input type="text" class="form-control" placeholder="Artista" id="artista"
+                                            onkeyup="search_artista(this.value)"
+                                            class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false" />
+                                        <ul class="dropdown-menu artista_search">
+                                            <li>Nessun artista</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="artist_respond"></div>
+                            </div>
+                            <div class="genere">
+                                <div class="mb-3">
+                                    <h3 class="text-center">Genere preferito</h3>
+                                    <div id="genre"></div>
+                                    <br>
+                                    <div class="input-group mb-3 artista_search_bar">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-music-note-list"></i></span>
+                                        <input type="text" class="form-control" placeholder="Genere" id="genere"
+                                            onkeyup="search_genre(this.value)" class="btn btn-secondary dropdown-toggle"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false" />
+                                        <ul class="dropdown-menu artista_search">
+                                            <li>Nessun genere</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="genre_respond"></div>
+                            </div>
+                            <div class="text-center">
+                                <h4>Informazioni Personali</h4>
+                                <p id="p_username"><b>Username:</b> </p>
+                                <p id="p_email"><b>Email:</b> </p>
+                                <br>
+                                <a href="/change_data" class="btn btn-light" id="destroy_account">Cambia dati</a>
+                                <br><br><br>
+                                <button class="btn btn-danger" id="destroy_account" onclick="remove_account()">Cancella account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+            <script>check_login()</script>
+    </div>
+</body>
+
+</html>

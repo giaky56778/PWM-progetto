@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/html_page/index.js"></script>
+    <script src="/front-end/html_page/artist.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+                <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div id="container-card" class='row'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+            <script>check_login()</script>
+    </div>
+</body>
+
+</html>

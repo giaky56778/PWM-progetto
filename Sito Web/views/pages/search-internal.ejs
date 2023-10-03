@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/html_page/search-internal.js" defer></script>
+    <title>Cerca interna</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+                <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                        <div id="container-card" class='row'>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                                    aria-describedby="search-addon" onkeyup="search(this.value)">
+                            </div>
+                            <div class="row gx-4">
+                                <button type="button" id="tutto" class="col-md-2 btn btn-outline-light active"
+                                    onclick="cambia('tutto')">Tutto</button>
+                                <button type="button" id="tag" class="col-md-2 btn btn-outline-light"
+                                    onclick="cambia('tag')">Tag</button>
+                                <button type="button" id="brano" class="col-md-2 btn btn-outline-light"
+                                    onclick="cambia('brano')">Brano</button>
+                                <button type="button" id="playlist" class="col-md-2 btn btn-outline-light"
+                                    onclick="cambia('playlist')">Nome Playlist</button>
+                                <div class="row">
+                                    <h2 id="playlist_category_title"></h2>
+                                    <div id="my_playlist" class="row"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+            <script>check_login()</script>
+    </div>
+</body>
+
+</html>

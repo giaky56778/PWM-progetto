@@ -1,0 +1,344 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 10pt;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+#logbar{
+    height: 9.5vh;
+}
+
+.barra {
+    height: 85vh;
+}
+
+.table>* {
+    color: white;
+}
+
+.table-hover tr:hover {
+    background-color: #34343480 !important;
+}
+
+.overalbum  {
+    color:#9f9f9f !important
+}
+
+.table-hover tr:hover a.overalbum:hover   {
+    text-decoration: underline !important;
+    color:white !important;
+}
+
+.table-hover tr{
+    height: 58px;
+}
+
+.stick {
+    position: sticky;
+    top: -4.15vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #242424;
+    z-index: 1;
+    border-bottom: white 1px solid;
+}
+
+.col-md-3,
+.col-md-9 {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    height: 12.5vh;
+    width: 99%;
+    background-color: #121212;
+    margin: 0.5vh;
+    margin-top: 1vh;
+    padding: 1vh
+}
+
+.footer-login {
+    margin-top: 1vh;
+    width: 150px;
+}
+
+.login {
+    width: 47%;
+    margin: 1%;
+}
+
+.container-inside-song {
+    max-height: 10vh;
+}
+
+.rounded-2 {
+    background-color: #121212;
+    margin: 1.75vh 0.2vh 0.2vh;
+}
+
+#ascolta_spotify{
+    margin-top: 1%;
+}
+
+.album-bar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#container-song {
+    height: inherit;
+    overflow-x: hidden;
+    padding: 2% 3.5% 0%;
+}
+
+.barra-sx {
+    padding: 5px;
+}
+
+.barra-sx h5 {
+    padding: 10px
+}
+
+.card-body {
+    padding: 5px;
+}
+
+.explicit{
+    color:rgb(145, 0, 0) !important;
+}
+
+.card-song {
+    width: 13em;
+}
+    
+
+.info-album{
+    margin: -2.5% -4% 0%;
+    padding:20px
+}
+
+.card-img-top {
+    height: 150px !important;
+    width: 150px !important;
+    
+    object-fit: cover;
+    margin: auto;
+}
+
+#imgAlbum{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: max-content;
+    width: 250px;
+}
+
+.card-song .card:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.card-song a>* {
+    color: red;
+}
+
+.login-no-check{
+    height: inherit; 
+    background-image: linear-gradient(to right, purple, rgb(126, 223, 255)); 
+    margin-top: 1.25vh;
+}
+
+.card {
+    background-color: #242424;
+    color: white;
+    padding: 2%;
+    height:20em
+}
+
+#container-album {
+    height: -webkit-fill-available;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding:10px
+}
+
+
+#container-song a {
+    text-decoration: none;
+}
+
+#container-song::-webkit-scrollbar-track, .scrollmenu::-webkit-track, #container-album::-webkit-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#container-song::-webkit-scrollbar, #cerca_brano::-webkit-scrollbar, #container-album::-webkit-scrollbar,.artista_search::-webkit-scrollbar-thumb {
+    width: 6px;
+}
+
+#container-song::-webkit-scrollbar-thumb, .scrollmenu::-webkit-scrollbar-thumb, #container-album::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #535353;
+}
+
+.scrollmenu::-webkit-scrollbar{
+    height: 6px;
+}
+
+.equal {
+    max-height: 90vh;
+}
+
+.gx-4 button{
+    margin: 1.5%
+}
+
+div.scrollmenu {
+    
+    height: -webkit-inline-box;
+    overflow-x: auto;
+    white-space: nowrap;
+    display:inline-block;
+    height: 45vh;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+  }
+
+  div.scrollmenu a div div{
+    white-space: initial
+  }
+
+.search{
+    margin-bottom: 5vh;
+}
+
+#cerca_brano{
+    height: 45vh;
+}
+
+.container-fluid.mh-100.login.position-absolute.top-50.start-50.translate-middle{
+    background-color:#121212;
+    height: 85vh;
+    padding:7.5vh;
+    border-radius: 5px;
+}
+
+.btn.btn-success.col-md-2{
+    margin:50px 
+}
+
+.error{
+    height: 5vh;
+}
+
+body.login{
+    background-image: linear-gradient(to bottom, #121212,#242424)
+}
+
+.g-4.row.justify-content-center{
+    padding-bottom: 3.5vh;
+    border-bottom: white solid 1px;
+}
+
+#submit_login{
+    width: 100%;
+}
+
+.col-md-8.register{
+    margin-top:-5vh
+}
+
+.error{
+    padding:5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn.btn-success.dropdown-toggle{
+    width: 15em;
+    text-align: initial;
+    padding:7.5px;
+}
+
+.row_login{
+    width: 25%;
+}
+
+.btn-group{
+    margin-top:2vh;
+    height: 75%;
+}
+.btn.btn-danger{
+    width: 100%;
+}
+
+.artista_search_bar{
+    width: 33%;
+    margin: auto;
+}
+
+.artista_search{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#artisti,#genre{
+    height: 5vh;
+}
+
+.artista,.genere{
+    border-bottom: 1px solid white;
+}
+
+.artista_span{
+    margin:0 20px 20px 0;
+    border-radius: 5px;
+    padding:5px;
+    background-color: #242424;
+    display: inline-block;
+    height: fit-content !important;
+    border:1px solid white;
+    min-width: 50px;
+}
+
+h4.text-center{
+    margin-top:25px
+}
+
+#destroy_account{
+    width: initial !important;
+}
+
+img{
+    border-radius: 10px !important;
+}
+
+.album-card{
+    padding:10px;
+    color:white;
+    text-decoration: none;
+    border-radius: 15px;
+}
+    .album-card div{
+        border-radius: 0.375rem !important
+    }
+    .album-card:hover{
+        background-color: #242424;
+    }
+
+#privata{
+    margin-left: 50px;
+}
+
+.btn-group.add_song{
+    margin-top:0 !important
+}
+
+.nav-link:hover{
+    background-color: #242424;
+}

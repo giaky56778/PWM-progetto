@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <%- include('../partitials/head') -%>
+    <script src="/front-end/account/account.js"></script>
+    <script src="/front-end/checklogin.js" defer></script>
+    <title>Cambia impostazioni profilo</title>
+</head>
+
+<body>
+    <div class="container-fluid mh-100">
+        <div class="row">
+            <%- include('../partitials/barrasx') %>
+            <div class="col-md-9 barra">
+                    <div id="container-song" class="rounded-2">
+                    <a href="/change_profile"><i class="bi bi-house"></i> Indietro</a>
+                    <br><br><br>
+                    <div class=" g-5 row justify-content-center">
+                        <div class="col-md-8 register">
+                            <div class='error'></div>
+                            <h1 class="text-center">Aggiorna profilo</h1>
+                            <div class="mb-3">
+                                <label for="username" class="form-label"><i class="bi bi-people-fill"></i> Username</label>
+                                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp"
+                                    placeholder='Username'>
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <input type="text" class="form-control" placeholder="Email" name="email" id="email" aria-label="email"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword5" class="form-label"><i class="bi bi-key-fill"></i> Password</label>
+                                <input type="password" id="password" class="form-control" name="password"
+                                    aria-describedby="passwordHelpBlock" placeholder="Password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword5" class="form-label"><i class="bi bi-key"></i> Conferma password</label>
+                                <input type="password" id="password_conf" class="form-control" name="password_conf"
+                                    aria-describedby="passwordHelpBlock" placeholder="Conferma password">
+                            </div>
+                            <br>
+                            <button onclick="change_data()" id="submit_login"
+                                class="position-relative top-0 start-50 translate-middle btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <div class="footer row rounded-2"></div>
+        </div>
+        <%- script %>
+        <script>check_login()</script>
+    </div>
+</body>
+
+</html>
